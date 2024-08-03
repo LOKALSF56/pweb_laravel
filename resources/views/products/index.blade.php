@@ -3,6 +3,7 @@
     <div class="container">
     <h1>Produk</h1>
     <a href="/product/create"class="btn btn-success">input data</a>
+    <a href="{{ route('product.pdf') }}" class="btn btn-secondary">Download PDF</a>
     <table class="table table-bordered">
     <tr>
         <th>ID</th>

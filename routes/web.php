@@ -19,3 +19,4 @@ Route::post('/pegawai',[PegawaiController::class,"store"])->name("pegawai.store"
 Route::get('/pegawai/{id}/edit',[PegawaiController::class,"edit"])->name("pegawai.edit");
 Route::put('/pegawai/{id}',[PegawaiController::class,"update"])->name("pegawai.update");
 Route::delete('/pegawai/{id}',[PegawaiController::class,"delete"])->name("peegawai.delete");
+Route::get('/product/pdf', [ProductController::class, 'generatePDF'])->name("product.pdf");

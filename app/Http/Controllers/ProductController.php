@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Product;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -36,4 +37,10 @@ class ProductController extends Controller
         $Product->delete();
         return redirect(route('product.index'));
     }
+    public function generatePDF()
+{
+    $products = Product::all();
+    $pdf = Pdf::loadView('products.pdf', compact('products'));
+    return $pdf->download('laporan-list.pdf');
+}
 }
